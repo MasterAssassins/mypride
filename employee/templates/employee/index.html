@@ -1,0 +1,13 @@
+{% extends 'employee/base.html' %}
+{% block title %}All Employees{% endblock title %}
+{% block employees_active %}active{% endblock %}
+{% block body %}
+    <div class="well text-center">
+        <h1>List of Employees</h1>
+    </div>
+    <div class="list-group">
+        {% for employee in all_employees %}
+            <a href='{{ employee.get_absolute_url }}' class="list-group-item">{{employee.firstName}}</a>
+        {% endfor %}
+    </div>
+{% endblock %}

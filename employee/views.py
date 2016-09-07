@@ -11,8 +11,8 @@ def index(request):
         return render(request, 'employee/login.html')
     else:
         all_employees = Emp.objects.all()
-    context = {'all_employees': all_employees}
-    return render(request, 'employee/index.html', context)
+    data = {'all_employees': all_employees}
+    return render(request, 'employee/index.html', data)
 
 
 def detail(request, pk):
